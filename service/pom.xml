@@ -14,7 +14,6 @@
     <modules>
         <module>service_user</module>
         <module>service_hosp</module>
-        <module>service_user</module>
     </modules>
 
 
