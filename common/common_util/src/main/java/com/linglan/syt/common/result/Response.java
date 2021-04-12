@@ -1,4 +1,4 @@
-package com.linglan.syt.model.response;
+package com.linglan.syt.common.result;
 
 /**
  * 通用返回对象
