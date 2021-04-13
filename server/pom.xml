@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>server_hosp</module>
+        <module>server_cmn</module>
     </modules>
     <dependencies>
         <!--web-->
