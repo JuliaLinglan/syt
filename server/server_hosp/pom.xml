@@ -12,6 +12,10 @@
     <artifactId>server_hosp</artifactId>
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.linglan</groupId>
             <artifactId>common_util</artifactId>
             <version>0.0.1-SNAPSHOT</version>

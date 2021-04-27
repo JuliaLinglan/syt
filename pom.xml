@@ -123,6 +123,19 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+    <profiles>
+        <profile>
+            <id>stage</id>
+            <properties>
+                <deploy.type>stage</deploy.type>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <deploy.type>prod</deploy.type>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
