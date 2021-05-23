@@ -1,7 +1,7 @@
 package com.linglan.hospital.controller;
 
 import com.linglan.hospital.mapper.HospitalSetMapper;
-import com.linglan.hospital.model.HospitalSet;
+import com.linglan.hospital.model.HospitalSetM;
 import com.linglan.hospital.service.ApiService;
 import com.linglan.hospital.util.YyghException;
 import io.swagger.annotations.Api;
@@ -35,13 +35,13 @@ public class ApiController extends BaseController {
 
 	@RequestMapping("/hospitalSet/index")
 	public String getHospitalSet(ModelMap model,RedirectAttributes redirectAttributes) {
-		HospitalSet hospitalSet = hospitalSetMapper.selectById(1);
+		HospitalSetM hospitalSet = hospitalSetMapper.selectById(1);
 		model.addAttribute("hospitalSet", hospitalSet);
 		return "hospitalSet/index";
 	}
 
 	@RequestMapping(value="/hospitalSet/save")
-	public String createHospitalSet(ModelMap model,HospitalSet hospitalSet) {
+	public String createHospitalSet(ModelMap model, HospitalSetM hospitalSet) {
 		hospitalSetMapper.updateById(hospitalSet);
 		return "redirect:/hospitalSet/index";
 	}
@@ -49,7 +49,7 @@ public class ApiController extends BaseController {
 	@RequestMapping("/hospital/index")
 	public String getHospital(ModelMap model,HttpServletRequest request,RedirectAttributes redirectAttributes) {
 		try {
-			HospitalSet hospitalSet = hospitalSetMapper.selectById(1);
+			HospitalSetM hospitalSet = hospitalSetMapper.selectById(1);
 			if(null == hospitalSet || StringUtils.isEmpty(hospitalSet.getHoscode()) || StringUtils.isEmpty(hospitalSet.getSignKey())) {
 				this.failureMessage("先设置医院code与签名key", redirectAttributes);
 				return "redirect:/hospitalSet/index";
@@ -87,7 +87,7 @@ public class ApiController extends BaseController {
 								 @RequestParam(defaultValue = "10") int pageSize,
 								 HttpServletRequest request,RedirectAttributes redirectAttributes) {
 		try {
-			HospitalSet hospitalSet = hospitalSetMapper.selectById(1);
+			HospitalSetM hospitalSet = hospitalSetMapper.selectById(1);
 			if(null == hospitalSet || StringUtils.isEmpty(hospitalSet.getHoscode()) || StringUtils.isEmpty(hospitalSet.getSignKey())) {
 				this.failureMessage("先设置医院code与签名key", redirectAttributes);
 				return "redirect:/hospitalSet/index";
@@ -125,7 +125,7 @@ public class ApiController extends BaseController {
 								 @RequestParam(defaultValue = "10") int pageSize,
 							   HttpServletRequest request,RedirectAttributes redirectAttributes) {
 		try {
-			HospitalSet hospitalSet = hospitalSetMapper.selectById(1);
+			HospitalSetM hospitalSet = hospitalSetMapper.selectById(1);
 			if(null == hospitalSet || StringUtils.isEmpty(hospitalSet.getHoscode()) || StringUtils.isEmpty(hospitalSet.getSignKey())) {
 				this.failureMessage("先设置医院code与签名key", redirectAttributes);
 				return "redirect:/hospitalSet/index";

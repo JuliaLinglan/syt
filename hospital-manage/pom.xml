@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.1</version>
-        <!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.linglan</groupId>
     <artifactId>hospital-manage</artifactId>
@@ -72,11 +72,11 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- 日期工具栏依赖 -->
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-        </dependency>
+<!--        &lt;!&ndash; 日期工具栏依赖 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>joda-time</groupId>-->
+<!--            <artifactId>joda-time</artifactId>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>commons-codec</groupId>

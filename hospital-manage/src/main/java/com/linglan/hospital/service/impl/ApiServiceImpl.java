@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.linglan.hospital.mapper.HospitalSetMapper;
 import com.linglan.hospital.mapper.ScheduleMapper;
-import com.linglan.hospital.model.HospitalSet;
+import com.linglan.hospital.model.HospitalSetM;
 import com.linglan.hospital.model.Schedule;
 import com.linglan.hospital.service.ApiService;
 import com.linglan.hospital.util.BeanUtils;
@@ -48,18 +48,18 @@ public class ApiServiceImpl implements ApiService {
 
     @Override
     public String getHoscode() {
-        HospitalSet hospitalSet = hospitalSetMapper.selectById(1);
+        HospitalSetM hospitalSet = hospitalSetMapper.selectById(1);
         return hospitalSet.getHoscode();
     }
 
     @Override
     public String getSignKey() {
-        HospitalSet hospitalSet = hospitalSetMapper.selectById(1);
+        HospitalSetM hospitalSet = hospitalSetMapper.selectById(1);
         return hospitalSet.getSignKey();
     }
 
     private String getApiUrl() {
-        HospitalSet hospitalSet = hospitalSetMapper.selectById(1);
+        HospitalSetM hospitalSet = hospitalSetMapper.selectById(1);
         return hospitalSet.getApiUrl();
     }
 
