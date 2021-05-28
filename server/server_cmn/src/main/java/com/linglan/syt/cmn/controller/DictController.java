@@ -15,12 +15,19 @@ import java.util.List;
 @Api(description = "数据字典接口")
 @RestController
 @RequestMapping("/admin/cmn/dict")
-@CrossOrigin
+//@CrossOrigin
 public class DictController {
 
     @Autowired
     DictService dictService;
 
+    //根据dictCode获取下级节点
+    @ApiOperation(value = "根据dictCode获取下级节点")
+    @GetMapping("findByDictCode/{dictCode}")
+    public Response findByDictCode(@PathVariable String dictCode) {
+        List<Dict> list = dictService.findByDictCode(dictCode);
+        return Response.success(list);
+    }
 
     //根据数据id查询子数据列表
     @ApiOperation(value = "根据数据id查询子数据列表")
@@ -28,6 +35,22 @@ public class DictController {
     public Response findChildData(@PathVariable Long id) {
         List<Dict> list = dictService.findChildData(id);
         return Response.success(list);
+    }
+
+
+    //根据dictcode和value查询
+    @GetMapping("getName/{dictCode}/{value}")
+    public String getName(@PathVariable String dictCode,
+                          @PathVariable String value) {
+        String dictName = dictService.getDictName(dictCode,value);
+        return dictName;
+    }
+
+    //根据value查询
+    @GetMapping("getName/{value}")
+    public String getName(@PathVariable String value) {
+        String dictName = dictService.getDictName("",value);
+        return dictName;
     }
 
 }

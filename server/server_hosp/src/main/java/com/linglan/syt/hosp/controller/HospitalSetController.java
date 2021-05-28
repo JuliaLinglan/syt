@@ -19,7 +19,7 @@ import java.util.Random;
 @Api(tags = "医院设置管理")
 @RestController
 @RequestMapping("/admin/hosp/hospitalSet")
-@CrossOrigin//解决跨域问题
+//@CrossOrigin//解决跨域问题
 public class HospitalSetController {
 
     @Autowired

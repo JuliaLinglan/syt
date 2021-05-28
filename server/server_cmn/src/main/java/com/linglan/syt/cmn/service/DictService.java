@@ -8,4 +8,8 @@ import java.util.List;
 public interface DictService extends IService<Dict> {
 
     List<Dict> findChildData(Long id);
+
+    String getDictName(String s, String value);
+
+    List<Dict> findByDictCode(String dictCode);
 }
