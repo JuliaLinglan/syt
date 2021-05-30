@@ -9,8 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>service_user</artifactId>
+    <artifactId>service-msm</artifactId>
+
     <dependencies>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.linglan</groupId>
             <artifactId>common_util</artifactId>
@@ -22,6 +27,5 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
 
 </project>

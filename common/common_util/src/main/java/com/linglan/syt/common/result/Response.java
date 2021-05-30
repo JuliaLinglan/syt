@@ -27,6 +27,27 @@ public class Response<T> {
         this.data = data;
     }
 
+    protected static <T> Response<T> build(T data) {
+        Response<T> result = new Response<T>();
+        if (data != null)
+            result.setData(data);
+        return result;
+    }
+
+    public static <T> Response<T> build(T body, MsgCode resultCodeEnum) {
+        Response<T> result = build(body);
+        result.setCode(resultCodeEnum.getCode());
+        result.setMessage(resultCodeEnum.getMessage());
+        return result;
+    }
+
+    public static <T> Response<T> build(Integer code, String message) {
+        Response<T> result = build(null);
+        result.setCode(code);
+        result.setMessage(message);
+        return result;
+    }
+
     /**
      * 成功返回结果
      *
